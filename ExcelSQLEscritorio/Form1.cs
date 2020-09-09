@@ -149,25 +149,32 @@ namespace ExcelSQLEscritorio
             }
             if (rbInsert.Checked)
             {
-                tempWhere = tempWhere + "VALUES ('";
                 for (int i = 0; i < dgvDatos.Rows.Count; i++)
                 {
+                    int esnumero = 0;
+                    tempWhere = "VALUES (";
                     codigo = codigo + "INSERT INTO " + tbTablaSQL.Text + "\n(";
                     for (int x = 0; x < cabeceras.Length; x++)
                     {
                         if (x == cabeceras.Length - 1)
                         {
-                            codigo = codigo + cabeceras[x] + ")\n";
-                            tempWhere = tempWhere + dgvDatos.Rows[i].Cells[x].Value.ToString() + "')";
+                            codigo = codigo + cabeceras[x] + ")";
+                            if(int.TryParse(dgvDatos.Rows[i].Cells[x].Value.ToString(), out esnumero))
+                                tempWhere = tempWhere + dgvDatos.Rows[i].Cells[x].Value.ToString() + ")";
+                            else
+                                tempWhere = tempWhere + "'" + dgvDatos.Rows[i].Cells[x].Value.ToString() + "')";
                         }
                         else
                         {
                             codigo = codigo + cabeceras[x] + ", ";
-                            tempWhere = tempWhere + dgvDatos.Rows[i].Cells[x].Value.ToString() + "', '";
+                            if (int.TryParse(dgvDatos.Rows[i].Cells[x].Value.ToString(), out esnumero))
+                                tempWhere = tempWhere + dgvDatos.Rows[i].Cells[x].Value.ToString() + ", ";
+                            else
+                                tempWhere = tempWhere + "'" + dgvDatos.Rows[i].Cells[x].Value.ToString() + "', ";
                         }
                     }
 
-                    codigo = codigo + "\n";
+                    codigo = codigo + " ";
                     codigo = codigo + tempWhere + ";\n";
                 }
             }
