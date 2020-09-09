@@ -12,11 +12,11 @@ using ExcelSQLEscritorio.Models;
 
 namespace ExcelSQLEscritorio
 {
-    public partial class Form1 : Form
+    public partial class btnCopiarSQL : Form
     {
         string[] cabeceras;
-        private string path = @"C:\Users\eduardo.camacho\Documents\cumples.xlsx";
-        public Form1()
+        private string path = @"C:\\";
+        public btnCopiarSQL()
         {
             InitializeComponent();
         }
@@ -46,7 +46,6 @@ namespace ExcelSQLEscritorio
                 {
                     int x = cabeceras.Length;
                     cabeceras[i] = sl.GetCellValueAsString(1, i + 1);
-                    tbCodigoSQL.Text = tbCodigoSQL.Text + cabeceras[i] + " ";
                 }
 
                 while (!string.IsNullOrEmpty(sl.GetCellValueAsString(iRow, 1)))
@@ -61,7 +60,18 @@ namespace ExcelSQLEscritorio
                         col6 = sl.GetCellValueAsString(iRow, 6),
                         col7 = sl.GetCellValueAsString(iRow, 7),
                         col8 = sl.GetCellValueAsString(iRow, 8),
-                        col9 = sl.GetCellValueAsString(iRow, 9)
+                        col9 = sl.GetCellValueAsString(iRow, 9),
+                        col10 = sl.GetCellValueAsString(iRow, 10),
+                        col11 = sl.GetCellValueAsString(iRow, 11),
+                        col12 = sl.GetCellValueAsString(iRow, 12),
+                        col13 = sl.GetCellValueAsString(iRow, 13),
+                        col14 = sl.GetCellValueAsString(iRow, 14),
+                        col15 = sl.GetCellValueAsString(iRow, 15),
+                        col16 = sl.GetCellValueAsString(iRow, 16),
+                        col17 = sl.GetCellValueAsString(iRow, 17),
+                        col18 = sl.GetCellValueAsString(iRow, 18),
+                        col19 = sl.GetCellValueAsString(iRow, 19),
+                        col20 = sl.GetCellValueAsString(iRow, 20)
                     };
 
                     lst.Add(oProducto);
@@ -73,7 +83,7 @@ namespace ExcelSQLEscritorio
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error", "Texto");
+                MessageBox.Show("Selecciona un archivo o asegurate de que el archivo seleccionado este cerrado y no se esté utilizando", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -163,6 +173,34 @@ namespace ExcelSQLEscritorio
             }
             tbCodigoSQL.Text = codigo;
             
+        }
+
+        private void btnArchivo_Click(object sender, EventArgs e)
+        {
+            ofdExcel.InitialDirectory = "c:\\";
+            ofdExcel.Filter = "Archivos Excel|*.xls;*.xlsx;*.xlsm";
+            ofdExcel.FilterIndex = 2;
+            ofdExcel.RestoreDirectory = true;
+            if (ofdExcel.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                path = ofdExcel.FileName;
+            }
+            lblRuta.Text = path;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if(tbCodigoSQL.Text.Length < 1)
+            {
+                MessageBox.Show("No hay contenido para copiar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Clipboard.SetText(tbCodigoSQL.Text);
+                MessageBox.Show("Copiado al portapapeles", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
     }
 }

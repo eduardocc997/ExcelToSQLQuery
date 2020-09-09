@@ -4,7 +4,6 @@ C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\bin\
 C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\bin\Debug\SpreadsheetLight.dll
 C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\bin\Debug\SpreadsheetLight.xml
 C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\obj\Debug\ExcelSQLEscritorio.csprojAssemblyReference.cache
-C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\obj\Debug\ExcelSQLEscritorio.Form1.resources
 C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\obj\Debug\ExcelSQLEscritorio.Properties.Resources.resources
 C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\obj\Debug\ExcelSQLEscritorio.csproj.GenerateResource.cache
 C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\obj\Debug\ExcelSQLEscritorio.csproj.CoreCompileInputs.cache
@@ -13,3 +12,4 @@ C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\obj\
 C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\obj\Debug\ExcelSQLEscritorio.pdb
 C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\eduardo.camacho\source\repos\ExcelSQLEscritorio\ExcelSQLEscritorio\obj\Debug\ExcelSQLEscritorio.btnCopiarSQL.resources

@@ -1,6 +1,6 @@
 ﻿namespace ExcelSQLEscritorio
 {
-    partial class Form1
+    partial class btnCopiarSQL
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -38,9 +38,13 @@
             this.tbTablaSQL = new System.Windows.Forms.TextBox();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbSelect = new System.Windows.Forms.RadioButton();
-            this.rbInsert = new System.Windows.Forms.RadioButton();
             this.rbUpdate = new System.Windows.Forms.RadioButton();
+            this.rbInsert = new System.Windows.Forms.RadioButton();
+            this.rbSelect = new System.Windows.Forms.RadioButton();
+            this.ofdExcel = new System.Windows.Forms.OpenFileDialog();
+            this.lblRuta = new System.Windows.Forms.Label();
+            this.btnArchivo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,15 +55,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(12, 36);
+            this.dgvDatos.Location = new System.Drawing.Point(12, 64);
             this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.Size = new System.Drawing.Size(1016, 299);
+            this.dgvDatos.Size = new System.Drawing.Size(1016, 271);
             this.dgvDatos.TabIndex = 0;
             // 
             // lblRegistros
             // 
             this.lblRegistros.AutoSize = true;
-            this.lblRegistros.Location = new System.Drawing.Point(347, 13);
+            this.lblRegistros.Location = new System.Drawing.Point(347, 41);
             this.lblRegistros.Name = "lblRegistros";
             this.lblRegistros.Size = new System.Drawing.Size(162, 13);
             this.lblRegistros.TabIndex = 1;
@@ -67,7 +71,7 @@
             // 
             // tbHoja
             // 
-            this.tbHoja.Location = new System.Drawing.Point(100, 10);
+            this.tbHoja.Location = new System.Drawing.Point(100, 38);
             this.tbHoja.Name = "tbHoja";
             this.tbHoja.Size = new System.Drawing.Size(160, 20);
             this.tbHoja.TabIndex = 2;
@@ -75,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 3;
@@ -83,7 +87,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(266, 8);
+            this.btnCargar.Location = new System.Drawing.Point(266, 36);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 4;
@@ -95,12 +99,12 @@
             // 
             this.tbCodigoSQL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCodigoSQL.Location = new System.Drawing.Point(149, 341);
+            this.tbCodigoSQL.Location = new System.Drawing.Point(149, 367);
             this.tbCodigoSQL.MaxLength = 999999999;
             this.tbCodigoSQL.Multiline = true;
             this.tbCodigoSQL.Name = "tbCodigoSQL";
             this.tbCodigoSQL.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbCodigoSQL.Size = new System.Drawing.Size(879, 247);
+            this.tbCodigoSQL.Size = new System.Drawing.Size(879, 221);
             this.tbCodigoSQL.TabIndex = 5;
             // 
             // label2
@@ -145,6 +149,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generar SQL";
             // 
+            // rbUpdate
+            // 
+            this.rbUpdate.AutoSize = true;
+            this.rbUpdate.Location = new System.Drawing.Point(9, 114);
+            this.rbUpdate.Name = "rbUpdate";
+            this.rbUpdate.Size = new System.Drawing.Size(69, 17);
+            this.rbUpdate.TabIndex = 11;
+            this.rbUpdate.Text = "UPDATE";
+            this.rbUpdate.UseVisualStyleBackColor = true;
+            // 
+            // rbInsert
+            // 
+            this.rbInsert.AutoSize = true;
+            this.rbInsert.Location = new System.Drawing.Point(9, 91);
+            this.rbInsert.Name = "rbInsert";
+            this.rbInsert.Size = new System.Drawing.Size(65, 17);
+            this.rbInsert.TabIndex = 10;
+            this.rbInsert.Text = "INSERT";
+            this.rbInsert.UseVisualStyleBackColor = true;
+            // 
             // rbSelect
             // 
             this.rbSelect.AutoSize = true;
@@ -157,31 +181,48 @@
             this.rbSelect.Text = "SELECT";
             this.rbSelect.UseVisualStyleBackColor = true;
             // 
-            // rbInsert
+            // ofdExcel
             // 
-            this.rbInsert.AutoSize = true;
-            this.rbInsert.Location = new System.Drawing.Point(9, 91);
-            this.rbInsert.Name = "rbInsert";
-            this.rbInsert.Size = new System.Drawing.Size(65, 17);
-            this.rbInsert.TabIndex = 10;
-            this.rbInsert.Text = "INSERT";
-            this.rbInsert.UseVisualStyleBackColor = true;
+            this.ofdExcel.FileName = "openFileDialog1";
             // 
-            // rbUpdate
+            // lblRuta
             // 
-            this.rbUpdate.AutoSize = true;
-            this.rbUpdate.Location = new System.Drawing.Point(9, 114);
-            this.rbUpdate.Name = "rbUpdate";
-            this.rbUpdate.Size = new System.Drawing.Size(69, 17);
-            this.rbUpdate.TabIndex = 11;
-            this.rbUpdate.Text = "UPDATE";
-            this.rbUpdate.UseVisualStyleBackColor = true;
+            this.lblRuta.AutoSize = true;
+            this.lblRuta.Location = new System.Drawing.Point(143, 14);
+            this.lblRuta.Name = "lblRuta";
+            this.lblRuta.Size = new System.Drawing.Size(113, 13);
+            this.lblRuta.TabIndex = 10;
+            this.lblRuta.Text = "Selecciona un archivo";
             // 
-            // Form1
+            // btnArchivo
+            // 
+            this.btnArchivo.Location = new System.Drawing.Point(12, 9);
+            this.btnArchivo.Name = "btnArchivo";
+            this.btnArchivo.Size = new System.Drawing.Size(125, 23);
+            this.btnArchivo.TabIndex = 11;
+            this.btnArchivo.Text = "Seleccionar archivo...";
+            this.btnArchivo.UseVisualStyleBackColor = true;
+            this.btnArchivo.Click += new System.EventHandler(this.btnArchivo_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Location = new System.Drawing.Point(149, 341);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Copiar SQL a portapapeles";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnCopiarSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 600);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnArchivo);
+            this.Controls.Add(this.lblRuta);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tbCodigoSQL);
             this.Controls.Add(this.btnCargar);
@@ -189,7 +230,7 @@
             this.Controls.Add(this.tbHoja);
             this.Controls.Add(this.lblRegistros);
             this.Controls.Add(this.dgvDatos);
-            this.Name = "Form1";
+            this.Name = "btnCopiarSQL";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
@@ -215,6 +256,10 @@
         private System.Windows.Forms.RadioButton rbUpdate;
         private System.Windows.Forms.RadioButton rbInsert;
         private System.Windows.Forms.RadioButton rbSelect;
+        private System.Windows.Forms.OpenFileDialog ofdExcel;
+        private System.Windows.Forms.Label lblRuta;
+        private System.Windows.Forms.Button btnArchivo;
+        private System.Windows.Forms.Button button1;
     }
 }
 
