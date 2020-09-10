@@ -100,9 +100,34 @@ namespace ExcelSQLEscritorio
                     {
                         if (x == 0)
                         {
-                            tempWhere = " WHERE " + cabeceras[x] + " = '" + dgvDatos.Rows[i].Cells[x].Value.ToString() + "' ";
+                            tempWhere = " WHERE " + cabeceras[x] + "= '" + dgvDatos.Rows[i].Cells[x].Value.ToString() + "' ";
                         }
                         else if (x == cabeceras.Length-1)
+                        {
+                            codigo = codigo + cabeceras[x] + " = " + dgvDatos.Rows[i].Cells[x].Value.ToString() + " ";
+                        }
+                        else
+                        {
+                            codigo = codigo + cabeceras[x] + " = " + dgvDatos.Rows[i].Cells[x].Value.ToString() + ", ";
+                        }
+
+                    }
+                    codigo = codigo + "\n";
+                    codigo = codigo + tempWhere + ";\n";
+                }
+            }
+            else if (rbLike.Checked)
+            {
+                for (int i = 0; i < dgvDatos.Rows.Count; i++)
+                {
+                    codigo = codigo + "UPDATE " + tbTablaSQL.Text + "\n SET ";
+                    for (int x = 0; x < cabeceras.Length; x++)
+                    {
+                        if (x == 0)
+                        {
+                            tempWhere = " WHERE " + cabeceras[x] + " LIKE '%" + dgvDatos.Rows[i].Cells[x].Value.ToString() + "%' ";
+                        }
+                        else if (x == cabeceras.Length - 1)
                         {
                             codigo = codigo + cabeceras[x] + " = " + dgvDatos.Rows[i].Cells[x].Value.ToString() + " ";
                         }

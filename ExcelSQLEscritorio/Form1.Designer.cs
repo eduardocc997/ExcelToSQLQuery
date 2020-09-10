@@ -45,6 +45,7 @@
             this.lblRuta = new System.Windows.Forms.Label();
             this.btnArchivo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.rbLike = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +137,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.rbLike);
             this.groupBox1.Controls.Add(this.rbUpdate);
             this.groupBox1.Controls.Add(this.rbInsert);
             this.groupBox1.Controls.Add(this.rbSelect);
@@ -215,6 +217,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // rbLike
+            // 
+            this.rbLike.AutoSize = true;
+            this.rbLike.Location = new System.Drawing.Point(6, 137);
+            this.rbLike.Name = "rbLike";
+            this.rbLike.Size = new System.Drawing.Size(116, 17);
+            this.rbLike.TabIndex = 12;
+            this.rbLike.TabStop = true;
+            this.rbLike.Text = "UPDATE con LIKE";
+            this.rbLike.UseVisualStyleBackColor = true;
+            // 
             // btnCopiarSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +273,7 @@
         private System.Windows.Forms.Label lblRuta;
         private System.Windows.Forms.Button btnArchivo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton rbLike;
     }
 }
 
